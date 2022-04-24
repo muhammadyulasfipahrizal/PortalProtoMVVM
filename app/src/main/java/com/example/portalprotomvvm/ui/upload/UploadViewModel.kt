@@ -1,13 +1,13 @@
-package com.example.portalprotomvvm.ui.dashboard
+package com.example.portalprotomvvm.ui.upload
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class DashboardViewModel : ViewModel() {
+class UploadViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
+        value = "This is upload Fragment"
     }
     val text: LiveData<String> = _text
 }

@@ -1,4 +1,4 @@
-package com.example.portalprotomvvm.ui.dashboard
+package com.example.portalprotomvvm.ui.games
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.portalprotomvvm.databinding.FragmentDashboardBinding
+import com.example.portalprotomvvm.databinding.FragmentGamesBinding
 
-class DashboardFragment : Fragment() {
+class GamesFragment : Fragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
+    private var _binding: FragmentGamesBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -23,12 +23,12 @@ class DashboardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val dashboardViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
+            ViewModelProvider(this).get(GamesViewModel::class.java)
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentGamesBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
+        val textView: TextView = binding.tvGames
         dashboardViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }

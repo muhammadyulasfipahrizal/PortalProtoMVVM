@@ -1,4 +1,4 @@
-package com.example.portalprotomvvm.ui.notifications
+package com.example.portalprotomvvm.ui.upload
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.portalprotomvvm.databinding.FragmentNotificationsBinding
+import com.example.portalprotomvvm.databinding.FragmentUploadBinding
 
-class NotificationsFragment : Fragment() {
+class UploadFragment : Fragment() {
 
-    private var _binding: FragmentNotificationsBinding? = null
+    private var _binding: FragmentUploadBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -23,12 +23,12 @@ class NotificationsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
+            ViewModelProvider(this).get(UploadViewModel::class.java)
 
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentUploadBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
+        val textView: TextView = binding.tvUpload
         notificationsViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
